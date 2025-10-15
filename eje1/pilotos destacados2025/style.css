@@ -1,0 +1,101 @@
+body{
+    background-color: #f33a3a;
+    font-family: sans-serif;
+}
+.encavesado{
+    background-color: white;
+    padding: 20px 20px;
+    color: rgb(10, 1, 1);
+    border-radius: 8px;
+    margin-bottom: 30px;
+
+    display: flex;               /* Activar flexbox */
+    align-items: center;         /* Centrar verticalmente */
+    justify-content: space-between; /* Separar contenido a los extremos */
+    flex-wrap: wrap;             /* Permitir que en pantallas pequeñas se apilen */
+}
+
+.encavesado h1{
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    
+}
+.encavesado ul{
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.encavesado ul li a{
+    color: rgb(3, 1, 1);
+    text-decoration: none;
+    font-size: 1.1rem;
+    padding: 6px 12px;
+    border-radius: 5px;
+}
+
+.encavesado ul li a:hover{
+    color: #302f2f;
+    border-bottom: 1px solid black;
+}
+.encavesado img{
+    
+    max-height: 60px;
+    width: auto;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+    justify-content: right;
+    
+}
+.contenedor-pilotos{
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    flex-wrap: wrap;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    
+}
+
+.tarjeta{
+    flex: 0 1 250px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 1);
+    padding: 15px;
+
+}
+
+.tarjeta img{
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.tarjeta ,h2 ,p{
+    text-align: center;
+    color: rgb(0, 0, 0);
+}
+
+#tarjeta1{
+    order: 4;
+}
+#tarjeta2{
+    flex-grow: 1;
+}
+#tarjeta3{
+    flex-grow: 1;
+}
+#tarjeta4{
+    flex-grow: 1;
+}
+@media (max-width: 768px) {
+    .contenedor-pilotos {
+          flex-direction: column; /* Apila verticalmente */
+          align-items: center; /* Centra cada tarjeta */
+        gap: 15px;
+    }
+
+    }

@@ -2,6 +2,7 @@ body{
     font-family: sans-serif;
 }
 .encavesado{
+    
     background-color:  #d40000;
     padding: 20px 20px;
     color: rgb(10, 1, 1);
@@ -40,6 +41,7 @@ body{
 .encavesado img{
     
     max-height: 60px;
+    min-height: 10px;
     width: auto;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.3);
@@ -52,9 +54,14 @@ body{
     border-radius: 10px;
     box-shadow: 0 1px 12px rgba(0, 0, 0, 1);
 
-    max-width: 900px;
+    width: 50%;
 
     margin: 0 auto 40px auto;
+
+    display: flex;
+    flex-direction: column;
+    
+    
 }
 
 .contenedor h3{
@@ -73,18 +80,20 @@ body{
 
 .contenedor img{
     min-height: 100px;
-    max-width: 800px;
+    width: 100%;
+    height: auto;
     display: block;
     margin: 20px 0;
     border-radius: 6px;
     box-shadow: 0 1px 12px rgba(0, 0, 0, 1);
 }
 
-table{
+.contenedor-tabla table{
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     font-size: 1rem;
+    
 }
 
 th,td{
@@ -95,4 +104,29 @@ th,td{
 th{
     background-color: #d40000;
     color: white;
+}
+
+
+@media (max-width: 768px){
+
+    .encavesado{
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .encavesado ul{
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+    .encavesado ul li a{
+        display: block;
+    }
+    .encavesado h1{
+        font-size: 2rem;
+    }
+
+
 }

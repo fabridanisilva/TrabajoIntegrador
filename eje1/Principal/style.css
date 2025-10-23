@@ -1,5 +1,6 @@
 body{
     font-family: sans-serif;
+    
 }
 .encavesado{
     
@@ -104,6 +105,7 @@ th,td{
 th{
     background-color: #d40000;
     color: white;
+    
 }
 
 
@@ -129,4 +131,66 @@ th{
     }
 
 
+}
+
+
+.carrusel{
+    width: 70%;
+    max-width: 600px;
+    height: 1%;
+    overflow-x: hidden;
+    padding: 2em;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 1);
+    border-radius: 5px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #302f2f;
+    
+}
+.carrusel .grande{
+    width: 200%;
+    
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 1);
+    padding: 2em;
+    background-color: red;
+
+    transition:all .5s ease ;
+    transform: translateX(0%);
+}
+.carrusel .img{
+    width: calc(100% / 2);
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 1);
+    min-height: 10vh;
+    margin: 10px;
+    height: auto;
+    object-fit: cover;
+
+    
+}
+.carrusel .puntos{
+    width: 100%;
+
+    padding: 1em;
+    margin: 1em 0 0;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.carrusel .punto{
+    width: 1em;
+    height: 1em;
+    list-style: none;
+    border-radius: 50px;
+    cursor: pointer;
+    margin: 1em;
+    box-shadow: 0 1px 11px rgba(0, 0, 0, 1);
+}
+
+.carrusel .punto.activo{
+    background-color: rgb(253, 2, 2);
 }

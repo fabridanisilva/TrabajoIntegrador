@@ -5,10 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>Practica Parcial 1</title>
-    <style>
-        
-
-    </style>
+    
 </head>
 <body>
     <div class="encavesado">
@@ -24,16 +21,28 @@
 
     <div class="contenedor">
         <div class="contenedor-info">
-            <h3>FP2: Hamilton lidera el 1-2 de Ferrari mientras la sesión de Norris termina temprano tras el impacto contra el muro</h3>
-            <p>Ferrari lideró los entrenamientos libres 2 antes del Gran Premio de Azerbaiyán mientras McLaren luchaba por mantener el ritmo.</p>
-            <img src="2236225171.avif" alt="">
-            <h4>Lewis Hamilton lideró el doblete de Ferrari en los entrenamientos libres 2 del Gran Premio de Azerbaiyán cuando la sesión de Lando Norris llegó a su fin antes de tiempo tras chocar contra la barrera.</h4>
-            <p>El tiempo de 1m 41.293s de Hamilton lo dejó 0.074s por delante de Charles Leclerc en la clasificación final, mientras que los McLaren de Norris y Oscar Piastri lucharon por mejorar su rendimiento en todo momento, terminando solo 10º y 12º respectivamente.</p>
-            <p>Incluso en los primeros minutos se pusieron en uso las escapatorias de Bakú, con Liam Lawson corriendo profundo en la curva 15 cuesta abajo a la izquierda, y Hamilton haciendo lo mismo en la curva 7 mientras los pilotos exploraban los límites para la segunda sesión de una hora.</p>
-            <p>Después de pasar gran parte de la sesión inaugural en el garaje mientras se solucionaba un problema en la unidad de potencia, Piastri salió a la pista casi inmediatamente en la FP2 con el neumático blando Pirelli, marcando un tiempo de 1m 43.307s en su primera vuelta rápida que lo colocó inicialmente en la cima de los tiempos.</p>
-            <p>Pero los tiempos pronto comenzaron a caer a medida que se puso más caucho en el circuito y los pilotos utilizaron el compuesto más blando, con la vuelta líder de Norris de la FP1 fácilmente superada en los primeros 10 minutos.</p>
-            <p>Después de la ráfaga inicial, Norris fue el más rápido con 1m 42.199s, ligeramente más rápido que Leclerc, el piloto de Ferrari había tomado la pole position en las últimas cuatro ediciones del GP de Azerbaiyán y mostró su destreza nuevamente en el circuito urbano, convirtiéndose en el primer piloto en bajar de la marca de 1m 42s con 1m 41.786s.</p>
-        </div>
+            <h3>F1: Max Verstappen ganó el GP de Azerbaiyán de punta a punta y sigue soñando con el campeonato</h3>
+            <p>El piloto de Red Bull lideró la carrera de principio a fin y le descontó varios puntos a Piastri y Norris. Colapinto sufrió un toque de Albon y terminó 19°.</p>
+            
+            
+            <div class="carrusel">
+                <div class="grande">
+                    <img src="max-verstappen_w862.webp" alt="imagen 1" class="img">
+                    <img src="descarga.jpeg" alt="imagen 2" class="img">
+                </div>
+                <ul class="puntos">
+                    <li class="punto activo"></li>
+                    <li class="punto"></li>
+                </ul>
+            </div>
+            
+            
+            
+            
+            <h4>El inicio de la carrera estuvo marcado por el increíble choque de Oscar Piastri, actual líder del campeonato de piolotos. El australiano perdió el control de su McLaren en la primera vuelta, impactó contra los carteles y rompió el frente de su monoplaza, lo que lo obligó a abandonar el Gran Premio de Azerbaiyán.</h4>
+            <p>Por su parte, Max Verstappen aguantó a Carlos Sainz en la largada y mantuvo el primer puesto de la carrera, lugar que no perdió ni siquiera cuando ingresó a los pits. El neerlandés tuvo una carrera perfecta y ganó en Bakú con más de 14 segundos de diferencia de George Russell, quien logró pasar a Sainz desplazando al español al tercer lugar.</p>
+            <p>Sin embargo, esta fue la mejor posición del piloto de Williams en la temporada y su primer podio con la escudería británica. Franco Colapinto había largado bien, subiendo del 16° puesto al 13°, pero tras salir de los pits Alex Albon lo tocó por atrás e hizo un trompo, lo que relegó al argentino al último lugar de la parrilla. El automovilista de Alpine no se pudo reponer de esa situación y culminó 19°.</p>
+            </div>
 
         <div class="contenedor-tabla">
             <p><b>Resultados de la práctica 2</b></p>
@@ -45,33 +54,52 @@
             </tr>
             <tr>
                 <td>1</td>
-                <td>Lewis  Hamilton</td>
-                <td>1:41.293</td>
+                <td>Max Verstappen (Red Bull)</td>
+                <td>1:33:26.408</td>
             </tr>
             <tr>
                 <td>2</td>
-                <td>Charles  Leclerc</td>
-                <td>+0,074 s</td>
+                <td>George Russell (Mercedes)</td>
+                <td>+14.609s</td>
             </tr>
             <tr>
                 <td>3</td>
-                <td>George  Russell</td>
-                <td>+0,477 s</td>
+                <td>Carlos Sainz (Williams)</td>
+                <td>+19.199s</td>
             </tr>
             <tr>
                 <td>4</td>
-                <td>Kimi  Antonelli</td>
-                <td>+0,486 s</td>
+                <td>Kimi  Antonelli (Mercedes)</td>
+                <td>+21.760s</td>
             </tr>
             <tr>
                 <td>5</td>
-                <td>Oliver  Bearman</td>
-                <td>+0,598 s</td>
+                <td>Liam Lawson (Racing Bulls)</td>
+                <td>+33.290s</td>
             </tr>
         </table>
         </div>
         
 
     </div>
+    <script>
+        const grande =document.querySelector('.grande')
+const punto  =document.querySelectorAll('.punto')
+
+
+punto.forEach ( (cadaPunto , i )=> {
+    punto[i].addEventListener('click',()=>{
+        let posicion = i
+
+        let operacion = (posicion*-50)
+        grande.style.transform = `translateX(${operacion}%)`
+
+        punto.forEach((cadaPunto,i)=>{
+            punto[i].classList.remove('activo')
+        })
+        punto[i].classList.add('activo')
+    })
+})
+    </script>
 </body>
 </html>

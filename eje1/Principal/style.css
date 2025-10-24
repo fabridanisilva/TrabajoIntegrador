@@ -2,6 +2,7 @@ body{
     font-family: sans-serif;
     
 }
+
 .encavesado{
     
     background-color:  #d40000;
@@ -21,10 +22,13 @@ body{
     margin-bottom: 15px;
     color: white;
 }
+
+
 .encavesado ul{
     display: flex;
     list-style: none;
     gap: 25px;
+    align-items: right;
 }
 
 .encavesado ul li a{
@@ -33,8 +37,8 @@ body{
     font-size: 1.1rem;
     padding: 6px 12px;
     border-radius: 5px;
+    margin-bottom: 15px;
 }
-
 .encavesado ul li a:hover{
     color: #302f2f;
     border-bottom: 1px solid black;
@@ -49,20 +53,15 @@ body{
     justify-content: right;
     
 }
+
 .contenedor{
+    
     background-color: white;
-    padding: 25px 30px;
-    border-radius: 10px;
+    max-width: 900px;
     box-shadow: 0 1px 12px rgba(0, 0, 0, 1);
-
-    width: 50%;
-
+    padding: 20px 30px;
     margin: 0 auto 40px auto;
 
-    display: flex;
-    flex-direction: column;
-    
-    
 }
 
 .contenedor h3{
@@ -193,4 +192,37 @@ th{
 
 .carrusel .punto.activo{
     background-color: rgb(253, 2, 2);
+}
+
+.pieDePag{
+
+    background-color:  #d40000;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    border-radius: 10px;  
+
+}
+
+.pieDePag-izq {
+
+    max-width: 60%;
+}
+
+.pieDePag-izq h2 {
+
+    margin: 0;
+    font-size: 1.8em;
+}
+
+.pieDePag-der {
+
+    text-align: center;
+}
+
+.pieDePag-der h3{
+
+    margin-bottom: 10px;
 }

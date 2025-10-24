@@ -13,6 +13,18 @@
         </head>
         
         <body>
+
+            <div class="encavesado">
+            <h1>La Formula 1</h1>
+            <ul>
+                <li><a href="../Principal/index.html">Inicio</a></li>
+                <li><a href="../Historia/Historia.html">Historia</a></li>
+                <li><a href="../pilotos/Pilotos.html" >Pilotos Historicos</a></li>
+                <li><a href="../momentos/Momentos.html">Mejores Momentos</a></li>
+                <li><a href="../pilotos destacados2025/index.html" >Pilotos destacados 2025</a></li>
+            </ul>
+                <img src="../Principal/png-clipart-2018-fia-formula-one-world-championship-abu-dhabi-grand-prix-logo-2017-formula-one-world-cha.png" alt="">
+            </div>
             
             <form id="formContacto">
 
@@ -42,13 +54,18 @@
 
                 <div id="errorTelefono" class="error"></div><br>
 
+                <label for="pregunta">Ingrese alguna consulta: </label>
+
+                <textarea type="text" id="pregunta" placeholder="Opcional" rows="5" cols="30"></textarea>
+                
                 <div class = "botones">
 
-                    <button type="submit" >Enviar</button>
+                    <button type="submit" onclick="limpiarCampos()">Enviar</button>
 
                     <button type="button" onclick="limpiarCampos ()"> Limpiar</button>
 
                 </div>
+
             </form>
 
             <div id="mensajeExito" class="exito" style="display: none;">
@@ -69,7 +86,7 @@
                     document.getElementById("apellido").value = "";
                     document.getElementById("email").value = "";
                     document.getElementById("telefono").value = "";
-                    document.getElementById("resultado")= "";
+                    document.getElementById("resultado").value= "";
                 }
 
                 form.addEventListener("submit", function(e){
@@ -188,4 +205,21 @@
 
                 
             </script>
+
+            <div class="pieDePag">
+
+                <div class="pieDePag-izq">
+                    <h1>Todos los Derechos Reservados</h1>
+                    <p>&copy; 2025 Fabricio Daniel Silva y Lucio Daniel Ponce Salinas</p>
+                    <p>Este sitio y su contenido estan protegidos </p>
+
+                </div>
+        
+                <div class="pieDePag-der">
+
+                    <h3>Formulario de Contacto</h3>
+                    <a href="../Formulario/formularios.html" onclick="return false;"><img src="../Principal/sticker-png-person-icon-avatar-icon-design-user-profile-face-silhouette-head-line-art-removebg-preview.png" alt="Icono de Contacto" width="80px"></a>
+                </div>
+
+            </div>
         </body>

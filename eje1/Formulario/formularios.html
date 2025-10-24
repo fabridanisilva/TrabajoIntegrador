@@ -42,12 +42,150 @@
 
                 <div id="errorTelefono" class="error"></div><br>
 
-                <button type="submit">Enviar</button>
+                <div class = "botones">
+
+                    <button type="submit" >Enviar</button>
+
+                    <button type="button" onclick="limpiarCampos ()"> Limpiar</button>
+
+                </div>
             </form>
 
-            <div id="resultado"></div>
+            <div id="mensajeExito" class="exito" style="display: none;">
+                
+                ¡Formulario enviado correctamente!
+                
+                <div id="resultado" ></div>
+            </div>
+
 
             <script>
 
+                const form = document.getElementById("formContacto");
+
+                function limpiarCampos(){
+
+                    document.getElementById("nombre").value = "";
+                    document.getElementById("apellido").value = "";
+                    document.getElementById("email").value = "";
+                    document.getElementById("telefono").value = "";
+                    document.getElementById("resultado")= "";
+                }
+
+                form.addEventListener("submit", function(e){
+
+                    e.preventDefault();
+                    // Evita el envio normal del formulario
+
+                    //Obtener valores
+
+                    const nombre = document.getElementById("nombre").value.trim();
+                    
+                    const apellido = document.getElementById("apellido").value.trim();
+
+                    const email = document.getElementById("email").value.trim();
+
+                    const telefono = document.getElementById ("telefono").value.trim();
+
+                    const resultado = document.getElementById("resultado");
+
+                    const mensaje = document.getElementById("mensajeExito");
+
+                    //Divs de error
+
+                    const errorN = document.getElementById("errorNombre");
+
+                    const errorA = document.getElementById("errorApellido");
+
+                    const errorM = document.getElementById("errorMail");
+
+                    const errorT = document.getElementById("errorTelefono");
+
+                    //Expresiones regulares 
+
+                    const regexEmail = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-z]{2,}$/;
+                    const regexTelefono = /^[0-9]{8,15}$/;
+
+                    let valido = true;
+
+                    //Validar Nombre
+
+                    if (nombre === ""){
+
+                        errorN.textContent = "El nombre es obligatorio.";
+                        valido = false;
+                    
+                    } else if(nombre.length > 30){
+
+                        errorN.textContent = "El nombre no puede superar los 30 caracteres.";
+                        valido = false;
+                    }
+
+                    //Validar Apellido
+
+                    if (apellido === ""){
+
+                        errorA.textContent = "El apellido es obligatorio.";
+                        valido = false;
+
+                    } else if(apellido.length > 30){
+
+                        errorA.textContent = "El apellido no puede superar los 30 caracteres"
+                        valido = false;
+                    }
+
+                    //Validar email
+
+                    if (email === ""){
+
+                        errorM.textContent= "El email es obligatorio.";
+                        valido = false;
+
+                    } else if (!regexEmail.test(email)){
+
+                        errorM.textContent = "El formato del email no es valido."
+                        valido = false;
+                    }
+
+                    // Validar Telefono
+
+                    if (telefono === ""){
+
+                        errorT.textContent = "El telefono es obligatorio.";
+                        valido = false;
+
+                    } else if (!regexTelefono.test(telefono)){
+
+                        errorT.textContent = "El formato del telefono es invalido.";
+                        valido = false
+                    }
+
+                    //Mostrar Resultados
+
+                    if (valido){
+
+                        mensaje.style.display = "block";
+                        setTimeout(() => {
+                            mensaje.style.display = "none";
+                        }, 3000);
+
+                        const datos = document.createElement("div");
+                        datos.innerHTML = `
+
+                            <p><strong>Nombre: </strong> ${nombre}</p>
+                            <p><strong>Apellido: </strong> ${apellido}</p>
+                            <p><strong>Email: </strong> ${email}</p>
+                            <p><strong>Telefono: </strong> ${telefono}</p>
+                        `;
+
+                        resultado.appendChild(datos);
+
+                        limpiarCampos();    
+                        
+                        form.reset;
+                }
+                })
+
+                
             </script>
         </body>

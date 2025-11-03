@@ -26,19 +26,19 @@
                 <img src="../Principal/png-clipart-2018-fia-formula-one-world-championship-abu-dhabi-grand-prix-logo-2017-formula-one-world-cha.png" alt="">
             </div>
             
-            <form id="formContacto">
+            <form id="formContacto" novalidate>
 
                 <h2>Formulario de Contacto</h2>
 
                 <label for="nombre">Nombre: </label><br>
                 
-                <input type="text" id="nombre" maxlength="30" required><br>
+                <input type="text" id="nombre" required><br>
 
                 <div id="errorNombre" class="error"></div>
 
                 <label for="apellido">Apellido: </label><br>
 
-                <input type="text" id="apellido" maxlength="30" required><br>
+                <input type="text" id="apellido" required><br>
 
                 <div id="errorApellido" class="error"></div>
 
@@ -50,7 +50,7 @@
 
                 <label for="telefono">Teléfono: </label><br>
 
-                <input type="text" id="telefono"><br>
+                <input type="text" id="telefono" required><br>
 
                 <div id="errorTelefono" class="error"></div><br>
 
@@ -60,7 +60,7 @@
                 
                 <div class = "botones">
 
-                    <button type="submit" onclick="limpiarCampos()">Enviar</button>
+                     <button type="submit">Enviar</button>
 
                     <button type="button" onclick="limpiarCampos ()"> Limpiar</button>
 
@@ -86,7 +86,7 @@
                     document.getElementById("apellido").value = "";
                     document.getElementById("email").value = "";
                     document.getElementById("telefono").value = "";
-                    document.getElementById("resultado").value= "";
+                    document.getElementById("resultado").innerHTML= "";
                 }
 
                 form.addEventListener("submit", function(e){
@@ -117,6 +117,11 @@
                     const errorM = document.getElementById("errorMail");
 
                     const errorT = document.getElementById("errorTelefono");
+
+                    errorN.textContent = "";
+                    errorA.textContent = "";
+                    errorM.textContent = "";
+                    errorT.textContent = "";
 
                     //Expresiones regulares 
 
@@ -186,6 +191,8 @@
                             mensaje.style.display = "none";
                         }, 3000);
 
+                        resultado.innerHTML = "";
+
                         const datos = document.createElement("div");
                         datos.innerHTML = `
 
@@ -196,10 +203,8 @@
                         `;
 
                         resultado.appendChild(datos);
-
-                        limpiarCampos();    
                         
-                        form.reset;
+                        form.reset();
                 }
                 })
 
